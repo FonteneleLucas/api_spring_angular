@@ -1,27 +1,18 @@
-version: '3'
+version: "2.1"
+
+networks:
+  test:
+
 services:
-  workaround-mysql:
-    container_name: dall-project
-    image: mysql
-    environment:
-      MYSQL_DATABASE: dall_
-      MYSQL_USER: spring
-      MYSQL_PASSWORD: spring123
-      MYSQL_ROOT_PASSWORD: 
-      MYSQL_ROOT_HOST: 'localhost'
+  app:
+    build:
+      context: .
+      dockerfile: dockerfile
     ports:
-      - "3308:3306"
-    restart: always
-  workaround:
-    depends_on: 
-      - workaround-mysql
-    restart: always
-    # will build ./docker/workaround/Dockerfile
-    build: ./docker/workaround
-    working_dir: /workaround
-    volumes:
-      - ./:/workaround
-      - ~/.m2:/root/.m2
-    expose:
-      - "8080"
-    command: "mvn clean spring-boot:run"
+      - "8082:8082"
+    networks:
+      - test
+      
+
+
+

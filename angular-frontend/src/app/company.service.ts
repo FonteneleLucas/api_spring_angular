@@ -9,13 +9,9 @@ import { $ } from 'protractor';
   providedIn: 'root'
 })
 export class CompanyService {
-  updateEmployee(id: number, employee: Company) {
-    throw new Error("Method not implemented.");
-  }
-
   
 
-  private baseUrl = 'http://ec2-18-222-231-85.us-east-2.compute.amazonaws.com:8082/api/company';
+  private baseUrl = 'http://localhost:8082/api/company';
 
   constructor(private http: HttpClient) { }
 
