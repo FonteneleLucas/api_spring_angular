@@ -15,7 +15,7 @@ export class CompanyService {
 
   
 
-  private baseUrl = 'http://localhost:8080/api/company';
+  private baseUrl = 'http://ec2-18-222-231-85.us-east-2.compute.amazonaws.com:8082/api/company';
 
   constructor(private http: HttpClient) { }
 
