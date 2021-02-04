@@ -1,0 +1,35 @@
+<div class="container pt-4 pb-4">
+    <div class="row">
+        <div class="col-sm">
+            <a routerLink="/add"><button class="btn btn-success pull-right" > New company</button></a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th style="width: 5%">ID</th>
+                        <th>Nome</th>
+                        <th style="width: 18%;"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let company of companies | async">
+                        <td> {{ company.id }} </td>
+                        <td> {{ company.name }} </td>
+                        <td>
+                            <button type="button" (click)="updateCompany(company.id)" class="btn btn-warning ml-2">Editar</button>
+                            <button type="button" (click)="deleteCompany(company.id)" class="btn btn-danger ml-2">Excluir</button>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
