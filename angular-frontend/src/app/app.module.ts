@@ -9,6 +9,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AddCompanyComponent } from './add-company/add-company.component';
 import { AppRoutingModule } from './app-routing.module';
 import { EditCompanyComponent } from './edit-company/edit-company.component';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import { EditCompanyComponent } from './edit-company/edit-company.component';
     NgbModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

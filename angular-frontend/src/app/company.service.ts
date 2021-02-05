@@ -11,7 +11,7 @@ import { $ } from 'protractor';
 export class CompanyService {
   
 
-  private baseUrl = 'http://localhost:8082/api/company';
+  private baseUrl = 'http://ec2-3-15-171-5.us-east-2.compute.amazonaws.com:8086/api/company';
 
   constructor(private http: HttpClient) { }
 
